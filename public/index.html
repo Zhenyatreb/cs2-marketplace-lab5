@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог — CS2 Market</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+<header class="site-header">
+    <div class="header-inner">
+        <a class="logo" href="index.html" class="active"><span>CS2</span> MARKET</a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-navigation">☰ Меню</button>
+        <nav id="main-navigation" class="nav" aria-label="Головна навігація">
+            <a href="index.html" class="active">Каталог</a>
+            <a href="cabinet.html">Кабінет</a>
+            <a href="balance.html">Баланс</a>
+            <a href="wishlist.html">Обране</a>
+            <a href="cart.html">Кошик</a>
+            <a href="history.html">Історія</a>
+            <a href="login.html">Вхід</a>
+        </nav>
+    </div>
+</header>
+<main>
+<h1 class="page-title">Каталог скінів</h1>
+<p class="page-description">Знайди предмет для своєї колекції або гри.</p>
+<div class="layout">
+    <aside class="panel">
+        <h2>Фільтри</h2>
+        <form id="catalog-filter">
+            <div class="filter-group">
+                <label for="search">Пошук за назвою</label>
+                <input id="search" type="search" placeholder="Наприклад, AK-47">
+            </div>
+            <div class="filter-group">
+                <label for="weapon">Тип зброї</label>
+                <select id="weapon"><option value="all">Усі типи</option><option value="rifle">Гвинтівки</option><option value="sniper">Снайперські гвинтівки</option><option value="pistol">Пістолети</option></select>
+            </div>
+            <div class="filter-group">
+                <label>Ціна, $</label>
+                <div class="form-row"><input id="min-price" type="number" min="0" placeholder="Від" aria-label="Мінімальна ціна"><input id="max-price" type="number" min="0" placeholder="До" aria-label="Максимальна ціна"></div>
+            </div>
+            <div class="filter-group">
+                <label for="quality">Стан предмета</label>
+                <select id="quality"><option value="all">Будь-який</option><option value="Factory New">Factory New</option><option value="Minimal Wear">Minimal Wear</option><option value="Field-Tested">Field-Tested</option></select>
+            </div>
+            <button class="button full-width" type="submit">Застосувати фільтри</button>
+            <button class="button button-secondary full-width filter-reset" type="reset">Очистити</button>
+        </form>
+            <p class="form-message" id="filter-message" aria-live="polite"></p>
+    </aside>
+    <section>
+        <div class="toolbar"><h2>Популярні предмети</h2><span class="muted" id="products-count">Завантаження...</span></div>
+        <div class="product-grid" id="catalog-products" aria-live="polite">
+            <p class="muted" id="catalog-status">Завантаження каталогу...</p>
+        </div>
+    </section>
+</div>
+</main>
+<footer class="site-footer">CS2 Market · Маркетплейс скінів Counter-Strike 2</footer>
+</body>
+</html>
